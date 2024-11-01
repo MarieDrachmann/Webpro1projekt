@@ -13,9 +13,12 @@ html {
   background-color: cyan;
 }
 
-.btn {
-    color: greenyellow !important;
-    background-color: cornflowerblue !important;
+.btn-primary {
+    color: white;
+    background-color: #2358fc;
+    border-right-color: #2313fc;
+    border-bottom-color: #2313fc;
+    border-width: 3px;
 }
 
 html {
@@ -25,6 +28,10 @@ html {
 
 body {
   margin-bottom: 60px;
-  background-color: red;
+  background-color: ghostwhite;
+}
+
+.navbar {
+    background-color: #87f8ff
 }
 
