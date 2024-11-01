@@ -6,6 +6,7 @@ namespace Webpro1projekt.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {
+        //opgradere databasen. 
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -193,6 +194,7 @@ namespace Webpro1projekt.Data.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
         }
 
+        //Nedgradering ad database, gør den mere simpel
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
