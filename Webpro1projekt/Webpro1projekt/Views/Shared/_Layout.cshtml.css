@@ -8,7 +8,7 @@ a.navbar-brand {
 }
 
 a {
-  color: #0077cc;
+  color: blueviolet;
 }
 
 body {
@@ -16,16 +16,15 @@ body {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: yellow !important;
+    background-color: #ffd800 !important;
+    border-color: #00ff21 !important;
 }
 
-/*.nav-pills .nav-link.active, .nav-pills .show */
-.nav-link .text-dark {
-  color: pink !important;
-  background-color: #1b6ec2 !important;
-  border-color: #1861ac !important;
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: greenyellow !important;
+    background-color: purple !important;
+    border-color: aqua !important;
 }
 /*
 .navbar-nav {
@@ -34,21 +33,15 @@ body {
 }
 */
 
-
-header nav.navbar.navbar-expand-sm.navbar-toggleable-sm.navbar-light.bg-white.border-bottom.box-shadow.mb-3{
-  background-color: green !important;
-}
-.border-top {
-  border-top: 1px solid #e5e5e5;
-
-}
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 5px solid #00ff21 !important;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem #00ffff7d !important;
 }
+
+
 
 button.accept-policy {
   font-size: 1rem;
@@ -61,4 +54,5 @@ button.accept-policy {
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+  color: lightgray;
 }

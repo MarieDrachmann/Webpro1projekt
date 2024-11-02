@@ -10,6 +10,15 @@ html {
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+  background-color: cyan;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #2358fc;
+    border-right-color: #2313fc;
+    border-bottom-color: #2313fc;
+    border-width: 3px;
 }
 
 html {
@@ -19,9 +28,10 @@ html {
 
 body {
   margin-bottom: 60px;
-  background-color: aquamarine;
+  background-color: ghostwhite;
 }
 
-body header{
-  background-color: green;
+.navbar {
+    background-color: #87f8ff
 }
+
