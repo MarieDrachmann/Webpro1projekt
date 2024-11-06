@@ -11,6 +11,10 @@ a {
   color: blueviolet;
 }
 
+body {
+  background-color: green !important;
+}
+
 .btn-primary {
     color: yellow !important;
     background-color: #ffd800 !important;
@@ -22,6 +26,12 @@ a {
     background-color: purple !important;
     border-color: aqua !important;
 }
+/*
+.navbar-nav {
+  background-color: green;
+  fill: purple; 
+}
+*/
 
 .border-bottom {
     border-bottom: 5px solid #00ff21 !important;
