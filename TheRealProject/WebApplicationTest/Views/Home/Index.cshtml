@@ -1,0 +1,83 @@
+﻿@{
+    @using Microsoft.AspNetCore.Identity
+    ViewData["Title"] = "Home Page";
+}
+
+<script src="site.js">   </script>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to UploadAPicPlz.ohno</h1>
+    <p>You need to log in to be able to upload pictures, and for us to be able to complete the assignment.</p>
+</div>
+
+<div>
+    <p id="over_cat_text">
+        hover mouse over cat!
+    </p>
+</div>
+<div class = "pics" id = "cat_container"> 
+    <img class="cat_pic" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnJ0ZXMwMmVyM3JmanQ0OWU5ZDNxbXU4ZmlhNGZiM3pxanI0ZjF5NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/I1nwVpCaB4k36/giphy.webp" 
+    alt="This is a gif of a cat begging">
+        <div class="cat_text">
+            <button type="button">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Click here to log in!</a>
+            </button>
+        <div class="text">This cat is begging for u to log in and upload pictures</div>
+        </div>
+    </div>
+
+   <div id="opgave_krav">
+       <h2>
+           Krav til opgaven er følgende:
+       </h2>
+       <ul>
+           <li>
+            Formular til registrering af brugere
+           </li>
+        <li>
+            Formular til login
+        </li>
+        <li>
+            Formularer skal bruge JavaScript og RegEx til at validere brugerinput
+           </li>
+        <li>
+            I skal sikre jer mod Cross-Site Scripting (CXX)
+        </li>
+        <li>
+            I skal sikre jer mod SQL Injection
+        </li>
+        <li>
+            Man skal kunne se en liste over brugere et sted
+        </li>
+        <li>
+            Man skal kunne se en liste over brugere et sted
+        </li>
+        <li>
+            Noget skal være responsivt
+        </li>
+        <li>
+            I skal selv skrive både noget CSS og Javascript, men der må gerne suppleres med jQuery, Bootstrap & Fontawesome
+           </li>
+        <li>
+            Der skal laves et ajax kald
+        </li>
+        <li>
+            Der skal være en .README-fil som fortæller
+            <ul>
+                <li>
+                    hvordan systeet sættes op og startes
+                </li>
+                <li>
+                    hvor jeg kan finde de enkelte sider med implementering af afleveringens krav
+                </li>
+                <li>
+                    hvad du selv har lavet som er forskelligt fra det din makker har lavet
+                </li>
+            </ul>
+        </li>
+       </ul>
+   </div>
+
+
+
+   
