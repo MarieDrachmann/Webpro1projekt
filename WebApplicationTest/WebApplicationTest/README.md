@@ -24,3 +24,6 @@ der høre til, husk et navn også.
 
 Controlleren skal kobles op med det der bliver skrevet ind på login siden.
 
+homepage:
+Teksten på siden ændre sig med vindue størrelsen.
+Når vinduet er mindre end 500x500px popper der et billeder op
