@@ -24,3 +24,4 @@ der høre til, husk et navn også.
 
 Controlleren skal kobles op med det der bliver skrevet ind på login siden.
 
+Der er lavet ajax via den site.js hvor den henter 10 facts fra et txt dokument.

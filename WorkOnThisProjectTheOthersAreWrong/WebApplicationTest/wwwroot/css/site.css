@@ -72,7 +72,9 @@ h2 {
 
 .pics #cat_container {
     position: relative;
-    width: 50%;
+    width: 100%;
+    z-index: 1;
+    top: 10px;
 }
 
 .cat_pic {
@@ -111,6 +113,24 @@ h2 {
     padding: 16px 32px;
 }
 
-@media screen and (max-width: 992px){
+#cramped {
+    display: none;
+}
 
+@media only screen and (max-width: 500px) {
+
+    #cramped {
+        display: block;
+        position: fixed;
+        z-index: 2;
+        top: 2%;
+        /*max-width: 100%;
+        height: auto;*/
+    }
+}
+
+#compliment {
+    display: inline-block;
+    position: absolute;
+    top: 30%;
 }
