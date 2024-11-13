@@ -1,0 +1,24 @@
+﻿@using WebApplicationTest.ViewModel
+@model Display
+
+
+@foreach(var user in Model.IUser)
+{
+	@foreach(var post in Model.pics)
+	{
+		@if(user.Id == post.foreign)
+		{
+		<h1>
+			Show dem pics hokus pokus!
+		</h1>
+		<div>
+			this person @user.UserName 's picture'
+			Its called @post.title
+			<p id="picDis">
+					@post.description
+			</p>
+			<img src="~/Pics/@post.picPath" alt="LOL CANT SHOW DIS" />
+		</div>
+		}
+	}
+}

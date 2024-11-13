@@ -44,6 +44,7 @@ namespace WebApplicationTest.Controllers
         }
 
         // GET: Users/Create
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
