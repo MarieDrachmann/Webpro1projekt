@@ -9,7 +9,7 @@ namespace WebApplicationTest.ViewModel
         [Key]
         public int id { get; set; }
 
-        public List <Pics> pics {  get; set; }
+        public List <OurPicUploads> pics {  get; set; }
 
         public List<IdentityUser> IUser { get; set; }
     }

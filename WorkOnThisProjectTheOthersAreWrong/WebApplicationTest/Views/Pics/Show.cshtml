@@ -6,7 +6,7 @@
 {
 	@foreach(var post in Model.pics) //all the pictures in the database
 	{
-		@if(user.Id == post.foreign) //
+		@if (user.Id == post.ProfileId)
 		{
 		<h1>
 			Show dem pics hokus pokus!
@@ -14,11 +14,11 @@
 		<div>
 			this person @user.UserName 's picture'
 			<br>
-			Pic is called @post.title
+			Pic is called @post.PicTitle
 			<p id="picDis">
-					@post.description
+					@post.PicDescription
 			</p>
-			<img src="~/Pics/@post.picPath" alt="LOL CANT SHOW DIS" />
+			<img src="~/Pics/@post.PicPath" alt="LOL CANT SHOW DIS" />
 		</div>
 		}
 	}

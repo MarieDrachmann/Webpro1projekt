@@ -105,14 +105,14 @@ namespace WebApplicationTest.Controllers
             return View(pics); //Returns the view with the pic given in parameters
         }
 
-        public IActionResult Show() //Displays the picture when called
+        /*public IActionResult Show() //Displays the picture when called
         {
             Display display = new Display(); //Makes new object for the picture
             display.pics = _context.Pics.ToList(); //Goes into the viewmodel Display and gets the pics list from the database and puts them into the list to display
             display.IUser = _context.Users.ToList(); //The same as before, but here its the data about the user who put up the picture
 
             return View(display); //Returns a view with the pictures
-        }
+        }*/
 
 
         // GET: Pics/Edit/5

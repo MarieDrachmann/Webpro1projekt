@@ -12,6 +12,7 @@ namespace WebApplicationTest.Data
         {
         }
         public DbSet<WebApplicationTest.Models.User> User { get; set; } = default!;
+        public DbSet<WebApplicationTest.Models.OurPicUploads> OurPicUpload { get; set; } = default!;
         //public DbSet<WebApplicationTest.Models.Pics> Pics { get; set; } = default!;
     }
 }

@@ -1,0 +1,26 @@
+﻿@using WebApplicationTest.ViewModel
+@model Display
+
+
+@foreach (var user in Model.IUser) //All users in database
+{
+	@foreach (var post in Model.pics) //all the pictures in the database
+	{
+		@if (user.Id == post.ProfileId)
+		{
+			<h1>
+				Show dem pics hokus pokus!
+			</h1>
+			<div>
+				this person @user.UserName 's picture'
+				<br>
+				Pic is called @post.PicTitle
+				<p id="picDis">
+					@post.PicDescription
+				</p>
+				<img src="~/Pics/@post.PicPath" alt="LOL CANT SHOW DIS" />
+
+			</div>
+		}
+	}
+}
