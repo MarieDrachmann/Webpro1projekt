@@ -63,55 +63,55 @@ namespace WebApplicationTest.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Pics pics)
         {
-            var user = await _userManager.GetUserAsync(User);
-            if(user != null)
+            var user = await _userManager.GetUserAsync(User); //The one who is logged in, get them
+            if(user != null) //Checks if there is a user
             {
-                pics.foreign = user.Id;
+                pics.foreign = user.Id; //Makes a foreign key so you can find the piture that fits the profile
             }
 
-            if(pics.picFile != null && pics.picFile.Length > 0)
+            if(pics.picFile != null && pics.picFile.Length > 0) //If there is a picture and the filename is longer than 0
             {
-                var allowedExtensions = new[] { ".jpg", ".png", ".jpeg" };
-                var checkExtension = Path.GetExtension(pics.picFile.FileName).ToLower();
+                var allowedExtensions = new[] { ".jpg", ".png", ".jpeg" }; //The picture needs to have one of these in its name
+                var checkExtension = Path.GetExtension(pics.picFile.FileName).ToLower(); //Changes the filename to lowercase
 
-                string wwwRootPath = _hostEnvironment.WebRootPath;
-                string fileName = Path.GetFileNameWithoutExtension(pics.picFile.FileName);
-                string extension = Path.GetExtension(pics.picFile.FileName);
-                fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-                string path = Path.Combine(wwwRootPath + "/Pics/", fileName);
+                string wwwRootPath = _hostEnvironment.WebRootPath; //The path to the folder in which the picture is, because the pictures path is saved into the database
+                string fileName = Path.GetFileNameWithoutExtension(pics.picFile.FileName); //Gets the path to the pic without the .jpeg and such
+                string extension = Path.GetExtension(pics.picFile.FileName); //Gets the whole name of the path
+                fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension; //Adds a timestamp to the picture path, because the timestamp is saved onto the path when uploading picture
+                string path = Path.Combine(wwwRootPath + "/Pics/", fileName); //puts the path together to be able to find the picture
 
-                if (!allowedExtensions.Contains(checkExtension))
+                if (!allowedExtensions.Contains(checkExtension)) //If the fileformat is wrong, you cant upload picture
                 {
                     ModelState.AddModelError("picFile", "Invalid file format.");
                     return RedirectToAction("UploadPictures", "Home");
                 }
 
-                using (var fileStream = new FileStream(path, FileMode.Create))
+                using (var fileStream = new FileStream(path, FileMode.Create)) //Gets the pic using the path made earlier
                 {
-                    await pics.picFile.CopyToAsync(fileStream);
+                    await pics.picFile.CopyToAsync(fileStream); //Waits to get the picture before continuing
                 }
-                pics.picPath = fileName;
+                pics.picPath = fileName; //Sets the picture given to the methods path to the name created earlier
             }
 
-            ModelState.Remove("foreign");
+            ModelState.Remove("foreign"); //Removes the foreign key from the object? Its use if for connecting and displaying the correct values when getting the picture with the correct profile
    
 
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) //If the object made fits the model, its true
             {
-                _context.Add(pics);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                _context.Add(pics); //Adds the pic into the database
+                await _context.SaveChangesAsync(); //Waits for the data being saved into the database
+                return RedirectToAction(nameof(Index)); //When uploaded picture, you are shown to the indexpage of the pics views
             }
-            return View(pics);
+            return View(pics); //Returns the view with the pic given in parameters
         }
 
-        public IActionResult Show()
+        public IActionResult Show() //Displays the picture when called
         {
-            Display display = new Display();
-            display.pics = _context.Pics.ToList();
-            display.IUser = _context.Users.ToList();
+            Display display = new Display(); //Makes new object for the picture
+            display.pics = _context.Pics.ToList(); //Goes into the viewmodel Display and gets the pics list from the database and puts them into the list to display
+            display.IUser = _context.Users.ToList(); //The same as before, but here its the data about the user who put up the picture
 
-            return View(display);
+            return View(display); //Returns a view with the pictures
         }
 
 

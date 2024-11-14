@@ -2,18 +2,19 @@
 @model Display
 
 
-@foreach(var user in Model.IUser)
+@foreach(var user in Model.IUser) //All users in database
 {
-	@foreach(var post in Model.pics)
+	@foreach(var post in Model.pics) //all the pictures in the database
 	{
-		@if(user.Id == post.foreign)
+		@if(user.Id == post.foreign) //
 		{
 		<h1>
 			Show dem pics hokus pokus!
 		</h1>
 		<div>
 			this person @user.UserName 's picture'
-			Its called @post.title
+			<br>
+			Pic is called @post.title
 			<p id="picDis">
 					@post.description
 			</p>
