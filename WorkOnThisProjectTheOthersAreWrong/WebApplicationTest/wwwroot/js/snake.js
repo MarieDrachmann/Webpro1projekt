@@ -4,14 +4,14 @@ let rows = 20;
 let columns = 20;
 let board;
 let context; // Canvas drawing
-let factor = Math.random * 5;
 
 //Snake size
-let snake_x = block_size * factor;
-let snake_y = block_size * factor;
+let snake_x = block_size * 5;
+let snake_y = block_size * 5;
+
 
 // Direction of Snake
-let speed_x = 1;
+let speed_x = 0;
 let speed_y = 0;
 
 let snek_body = [];
@@ -35,13 +35,18 @@ window.onload = function () {
     place_food();
     // Check if a button has been pressed.
     document.addEventListener("keyup", change_direction); //Movement checks
+    window.addEventListener("keydown", function (e) {
+        if (["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(e.code) > -1) {
+            e.preventDefault();
+        } // Prevent keyboard scrolling
+    }, false);
     // Framerate
-    setInterval(update, 100);
+    setInterval(update, 125);
 }
 
 function update() {
     if (game_over) {
-        document.getElementById("board").innerHTML = "<h1>Game Over</h1> <h2>You will never have privacy. We will share all your info</h2>"
+        document.getElementById("bucket").innerHTML = "<h1>Game Over</h1> <h2>You will never have privacy. We will share all your info</h2>"
         return;
     }
 
@@ -88,7 +93,12 @@ function update() {
         
         game_over = true;
         Stopper();
-        document.getElementById("board").innerHTML = "<h1>Game Over</h1> <h2>You will never have privacy. We will share all your info</h2>"
+    }
+    for (let block = 0; block < block.length; block++) {
+        if (snek_body[block][0] == snek_body[block][1]) {
+            game_over = true;
+            Stopper();
+        }
     }
 }
 
