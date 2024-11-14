@@ -30,7 +30,11 @@ namespace WebApplicationTest.Controllers
             _hostEnvironment = hostEnvironment;
         }
 
-        public IActionResult ShowOurPicUploads() //Displays the picture when called
+		public async Task<IActionResult> Index()
+		{
+			return View(await _context.OurPicUpload.ToListAsync());
+		}
+		public IActionResult ShowOurPicUploads() //Displays the picture when called
         {
             Display display = new Display(); //Makes new object for the picture
             display.pics = _context.OurPicUpload.ToList(); //Goes into the viewmodel Display and gets the pics list from the database and puts them into the list to display
