@@ -6,7 +6,6 @@ namespace WebApplicationTest.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        public DbSet<Pics> Pics { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

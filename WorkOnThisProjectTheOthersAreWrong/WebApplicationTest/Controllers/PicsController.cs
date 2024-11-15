@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -112,7 +112,7 @@ namespace WebApplicationTest.Controllers
             display.IUser = _context.Users.ToList(); //The same as before, but here its the data about the user who put up the picture
 
             return View(display); //Returns a view with the pictures
-        }*/
+        }
 
 
         // GET: Pics/Edit/5
@@ -204,4 +204,4 @@ namespace WebApplicationTest.Controllers
             return _context.Pics.Any(e => e.Id == id);
         }
     }
-}
+}*/

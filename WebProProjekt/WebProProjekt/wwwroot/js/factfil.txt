@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<facts>
+    <fact>Honning er det eneste fødevareprodukt, der aldrig bliver dårligt.</fact>
+    <fact>Hjertet pumper omkring 7.570 liter blod hver dag.</fact>
+    <fact>Den højeste temperatur målt på Jorden var 56,7 °C i Death Valley, Californien.</fact>
+    <fact>En kattens hjerte slår næsten dobbelt så hurtigt som et menneskes.</fact>
+    <fact>Japan har over 6.800 øer.</fact>
+    <fact>En snefnug kan tage op til en time at falde fra skyerne til jorden.</fact>
+    <fact>Verdens største ørken er Antarktis, ikke Sahara.</fact>
+    <fact>Jupiter har 79 kendte måner, hvilket er flest i vores solsystem.</fact>
+    <fact>En snegle kan sove i op til tre år ad gangen.</fact>
+    <fact>Bananer er faktisk bær, mens jordbær ikke er det.</fact>
+</facts>
