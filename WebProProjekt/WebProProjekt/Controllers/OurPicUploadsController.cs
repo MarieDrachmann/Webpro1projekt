@@ -81,8 +81,9 @@ namespace WebProProjekt.Controllers
 
             ourPicUpload.ProfileId = user.Id;
 
-            if (ourPicUpload.PicFile != null)
-            {
+			ModelState.Remove("ProfileId");
+			if (ourPicUpload.PicFile != null && ModelState.IsValid) //ModelState.IsValid tjekker om kravende til modellen er opfyldt
+			{
                 var allowedExtensions = new[] { ".jpg", ".png", ".jpeg" }; 
                 var checkExtension = Path.GetExtension(ourPicUpload.PicFile.FileName).ToLower();
                 var picName = Path.GetFileNameWithoutExtension(ourPicUpload.PicFile.FileName);
@@ -110,13 +111,16 @@ namespace WebProProjekt.Controllers
 
                 ourPicUpload.PicPath = picName;
 
-                _context.Add(ourPicUpload);
-                await _context.SaveChangesAsync();
-				return RedirectToAction(nameof(ShowOurPicUploads));
+				ModelState.AddModelError("PicFile", "Please upload a file");
+
+
+				_context.Add(ourPicUpload);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(ShowOurPicUploads));
+                
 			}
 
-            ModelState.AddModelError("PicFile", "Please upload a file");
-			ModelState.Remove("ProfileId");
+            
 
             return View(ourPicUpload);
 

@@ -10,7 +10,8 @@ namespace WebProProjekt.Models
 		public int Id { get; set; }
 
 		[DisplayName("The heckin' title of yo pic")]
-	
+
+		//[RegularExpression("")]
 		public string? PicTitle { get; set; }
 
 		[DisplayName("Describe your pic !!!")]
