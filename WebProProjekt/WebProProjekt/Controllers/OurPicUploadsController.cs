@@ -118,12 +118,6 @@ namespace WebProProjekt.Controllers
             ModelState.AddModelError("PicFile", "Please upload a file");
 			ModelState.Remove("ProfileId");
 
-			if (ModelState.IsValid)
-            {
-                _context.Add(ourPicUpload);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
             return View(ourPicUpload);
 
         }
