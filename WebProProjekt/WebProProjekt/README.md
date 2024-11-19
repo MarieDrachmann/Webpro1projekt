@@ -1,31 +1,49 @@
-Lav en model - Se det som at oprette en tabel via construters
-ved at køre migrations via package manager consoler (åbnes gennem tools -> NuGetmanager -> Package manager console)
-	Her i skriver man da: Add-Migration navnPåMigration
-Når der er lavet en migration kan man lave en console der skal gøre hvad en console gør. 
-	(læs op på det. https://www.tutorialspoint.com/asp.net_mvc/index.htm)
+
+Views -> Home -> Index   og   
+	Tekst på siden ændre størrelse efter skærmstørrelse
+	Henter gifs fra internettet via img elementer
+	Katte gif'en reagere når musen holdes over, og knappen derpå føre til log ind siden.
+	Når siden er under 500px dukker der en ny gif op
+	Ajax? knappen laver et ajax call gennem controlleren "HomeController" med funktionen AjaxCall()
+	Click for 10 facts knappen printer 14 facts fra en txt fil i js mappen, via et ajax call i site.js med funktionen Ajax()
+	Compliments :) knappen printer 1 af 10 forskellige komplimenter, funktionen er skrevet i site.js med funktionen Compliment()
+
+wwwroot -> css -> site
+	Der er ændret på farven af input felter på logind og registrer siderne
+	Alt udseende der er på Home page er skrevet inde i dette script
+
+wwwroot -> js -> site
+	Funktioner til compliment knap, ajax? knap og facts knap der er på homepage
+	Der bruges en random funktion til at bestemme hvilken kompliment der bliver printet på siden.
+
+	Et forsøg på at lave en validation funktion til input felter på OurPicUploads side, disse er dog lavet til required inde på modellen OurPicUploads
+
+Views -> Home -> Privacy
+	
+
+Views -> OurPicUploads -> ShowOurPicUploads
+	2 foreach loops der går gennem databasen for hver bruger der er oprettet og printer alle denne brugers billeder.
+	Dette gøres ved at bruge en ViewModel kaldet Display i ViewModel mappen, som sammenligner userId med det gemte 
+	profileID, der gemmes i databasen fra hvilken user der oploader et billede. 
+	Der er dertil sat en delete buttion på, som føre til den autogenerede delete page.
+
+ViewModel -> Display
+	En viewmodel der laver en mellem tabel 
+
+Models -> OurPicUploads
+
+Controllers -> HomeController
+
+Controllers -> OurPicUploadsController
+
+
+wwwroot -> css -> snake
 
 
 
-Databasen bliver sat op i scriptet Program.cs med den her:
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
-Databasen er den der allerede er implementeret i programmet.
+wwwroot -> js -> snake
 
+wwwroot -> Pics
 
-Tilføjet en knap i topbaren til at kunne gå ind på sin egen side til uploads af billeder.
-Tilføjede en ny klasse i HomeController.cs navngivet efter den nye fil (upload), inde i _layout.cshtml blev der tilføjet en knap i 
-topbaren der første til hjemmesiden og giver navnet på den fil som skal gåes til når knappen trykkes på.
-
-Der er oprettet en model der hedder users der tager argumenter som id, email og password.
-Man kan lave en controller når man har en model ved at højreklikke på controller mappen, sige add -> new scaffoled item... 
--> MVC Controller with views, using Entity Framework -> sige hvilken model den skal oprettes ud fra og hvilken database
-der høre til, husk et navn også.
-
-Controlleren skal kobles op med det der bliver skrevet ind på login siden.
-
-Der er lavet ajax via den site.js hvor den henter 10 facts fra et txt dokument.
-
-
-
-
+LogIn system
+Vi har brugt det allerede implementerede logIn system.

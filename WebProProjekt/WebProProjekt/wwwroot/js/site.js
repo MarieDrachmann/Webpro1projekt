@@ -49,3 +49,11 @@ function Ajax() {
     
     thing.send();
 }
+
+function Validation() {
+    var text = document.forms.value;
+    if (text == "") {
+        alert("This fiels is empty? dont you want to input something?");
+        return false;
+    }
+}
