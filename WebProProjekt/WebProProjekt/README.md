@@ -28,14 +28,23 @@ Views -> OurPicUploads -> ShowOurPicUploads
 	Der er dertil sat en delete buttion på, som føre til den autogenerede delete page.
 
 ViewModel -> Display
-	En viewmodel der laver en mellem tabel 
+	En viewmodel der laver en mellem tabel der holder foreign keys til brugertabel og billedtabel i database
 
 Models -> OurPicUploads
+	Model for hvad et objekt skal indholde når et billede oploades.
+	Der er skrevet RegEx ind over hvert felt for at undgå at der kommes bestemte karaktertegn ind i inputfelterne og 
+	videre ind i databasen.
+	Felterne er lavet required fordi de skal udfyldes førend noget kan uploades. 
+	PicFile er ikke mappet, da denne ikke lægges i databasen, men derimod ind i en mappe, Pics i wwwroot folderen.
 
 Controllers -> HomeController
+	Har en funktion til AjaxCall()
 
 Controllers -> OurPicUploadsController
-
+	funktionen ShowOurPicUploads() opretter Display viewmodel 
+	funktionen Create(OurPicUploads ourPicUpload) som lægger information ind i databasen om hvor billeder kan findes via 
+	url adresse til Pics folder. Den laver navnet om på billederne. Tjekker om billederne har den rigtige filformat.
+	Man kan kun uploade billeder når picupload feltet er udfyldt og at modelstate er valid.
 
 wwwroot -> css -> snake
 
@@ -44,6 +53,7 @@ wwwroot -> css -> snake
 wwwroot -> js -> snake
 
 wwwroot -> Pics
+	Indeholder de oploadede billeder
 
 LogIn system
 Vi har brugt det allerede implementerede logIn system.
