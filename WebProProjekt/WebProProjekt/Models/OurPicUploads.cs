@@ -9,13 +9,12 @@ namespace WebProProjekt.Models
 		[Key]
 		public int Id { get; set; }
 
-		[DisplayName("The heckin' title of yo pic")]
-
-		//[RegularExpression("")]
+		[DisplayName("The heckin' title of yo pic (May not contain < > . or new line)")]
+		[RegularExpression("([^(<>\n.)])*")]
 		public string? PicTitle { get; set; }
 
-		[DisplayName("Describe your pic !!!")]
-		
+		[DisplayName("Describe your pic !!!(May not contain < > . or new line)")]
+		[RegularExpression("([^(<>\n.)])*")]
 		public string? PicDescription { get; set; }
 		
 		public string? PicPath { get; set; }
