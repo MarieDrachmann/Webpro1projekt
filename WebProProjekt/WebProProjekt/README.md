@@ -1,4 +1,10 @@
 
+Når systemet starte, kommer man ind på homepage, herfra skal man først registrere sig som bruger, for derefter at logge ind.
+Herefter kan man se to yderligere knapper i navigationsbaren, Upload pics og show the pics, hvor man henholdsvis kan uploade billeder 
+eller se alle billeder og hvilke brugere der har lagt billeder op med titler og beskrivelser. Man kan også gå til en liste under hvert af
+billederne hvor man kan se alle informationer der er i databasen omkring billederne. 
+Der er en delete knap hvor man kan fjerne billeder fra databasen. 
+
 Views -> Home -> Index   og   
 	Tekst på siden ændre størrelse efter skærmstørrelse
 	Henter gifs fra internettet via img elementer
@@ -26,6 +32,9 @@ Views -> OurPicUploads -> ShowOurPicUploads
 	Dette gøres ved at bruge en ViewModel kaldet Display i ViewModel mappen, som sammenligner userId med det gemte 
 	profileID, der gemmes i databasen fra hvilken user der oploader et billede. 
 	Der er dertil sat en delete buttion på, som føre til den autogenerede delete page.
+
+Views -> Shared -> _Layout
+Der er lavet en if metode her, hvor man kun kan se upload pics! og Show them pic!lol knapperne hvis man er logget ind. _
 
 ViewModel -> Display
 	En viewmodel der laver en mellem tabel der holder foreign keys til brugertabel og billedtabel i database
@@ -56,4 +65,10 @@ wwwroot -> Pics
 	Indeholder de oploadede billeder
 
 LogIn system
-Vi har brugt det allerede implementerede logIn system.
+	Vi har brugt det allerede implementerede logIn system.
+
+Cross-Site-Scripting
+	Bliver implementeret automatisk af MVC template
+
+SQLInjection
+	Bliver implementeret automatisk af MVC template
