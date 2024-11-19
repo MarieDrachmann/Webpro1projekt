@@ -8,6 +8,16 @@ namespace WebProProjekt.Controllers
 	{
 		private readonly ILogger<HomeController> _logger;
 
+		[HttpGet]
+		public IActionResult AjaxCall()
+		{
+			string[] tekst = ["lalala", "thing", "another thing" ];
+
+			Random rambo = new Random();
+			int index = rambo.Next(0, tekst.Length);
+			return Json(tekst[index]);
+		}
+
 		public HomeController(ILogger<HomeController> logger)
 		{
 			_logger = logger;

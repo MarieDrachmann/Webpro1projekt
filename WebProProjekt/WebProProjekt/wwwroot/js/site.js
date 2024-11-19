@@ -31,6 +31,21 @@ function Fact() {
     }
     forbindelse.open("GET", "js/factfil.txt");
     forbindelse.send();
-
 }
 
+function Ajax() {
+    const thing = new XMLHttpRequest();
+    thing.open("GET", "/Home/AjaxCall")
+
+    thing.onload = function () {
+        if (thing.status === 200) {
+            var container = document.getElementById("ajaxText");
+            container.innerHTML = thing.responseText;
+        }
+        else {
+            console.error("Lol didnt work" + thing.status);
+        }
+    }
+    
+    thing.send();
+}
