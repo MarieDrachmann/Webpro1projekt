@@ -94,25 +94,3 @@ Views -> OurPicUploads -> ShowOurPicUploads
 
 Views -> Shared -> _Layout
 Der er lavet en if metode her, hvor man kun kan se upload pics! og Show them pic!lol knapperne hvis man er logget ind. _
-
-
-Controllers -> HomeController
-	Har en funktion til AjaxCall()
-
-Controllers -> OurPicUploadsController
-	
-
-wwwroot -> css -> snake
-
-
-
-wwwroot -> js -> snake
-
-wwwroot -> Pics
-	Indeholder de oploadede billeder
-
-
-
-
-
-
