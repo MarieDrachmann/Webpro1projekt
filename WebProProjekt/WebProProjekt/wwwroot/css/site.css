@@ -132,3 +132,11 @@ h2 {
     position: absolute;
     top: 30%;
 }
+
+canvas {
+    left: 50%;
+}
+
+canvas:hover {
+    opacity: revert;
+}
