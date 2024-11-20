@@ -31,6 +31,7 @@ function Fact() {
     }
     forbindelse.open("GET", "js/factfil.txt");
     forbindelse.send();
-
 }
+
+
 

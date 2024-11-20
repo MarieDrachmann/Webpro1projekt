@@ -24,8 +24,7 @@ let game_over = false;
 
 
 
-// JavaScript equivalent of Unitys Start() method apparently.
-window.onload = function () {
+function Start() {
     // Board setup
     board = document.getElementById("board");
     board.height = rows * block_size;
@@ -40,8 +39,9 @@ window.onload = function () {
             e.preventDefault();
         } // Prevent keyboard scrolling
     }, false);
-    // Framerate
+
     setInterval(update, 125);
+    document.getElementById("startbutton").remove();
 }
 
 function update() {
