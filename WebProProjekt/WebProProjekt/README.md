@@ -25,6 +25,10 @@ wwwroot -> js -> site
 	Et forsøg på at lave en validation funktion til input felter på OurPicUploads side, disse er dog lavet til required inde på modellen OurPicUploads
 
 Views -> Home -> Privacy
+	Inde under privacy er der til at starte med et img element til et billede.
+	Nedenudner der er der et link til angiveligt noget privatliv der fører dig hen til en kattevideo
+	Til sidst er der et snake game i bunden. Javascriptkoden til snake kan findes under wwwroot -> js -> snake.js
+	css'en ligger under wwwroot -> css -> snake.css. Og til sidst er html delen af snake i bunden af privacy
 	
 
 Views -> OurPicUploads -> ShowOurPicUploads

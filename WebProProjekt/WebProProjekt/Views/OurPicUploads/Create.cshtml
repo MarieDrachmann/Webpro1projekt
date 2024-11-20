@@ -32,20 +32,20 @@
             <div class="form-group" id="createButton">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
+            <script>
+                function Validator() {
+                    let picTit = document.getElementById("PicTitle").value;
+                    let picDic = document.getElementById("PicDescription").value;
+                    let picFile = document.getElementById("PicFile").value;
+                    console.log("Outer");
+                    while (picTit || picDic || picFile) {
+                        console.log("Hello");
+                        document.getElementsById("createButton").disabled = true;
+                    }
+                }
+            </script>
         </form>
     </div>
-    <script>
-        function Validator() {
-            let picTit = document.getElementById("PicTitle").value;
-            let picDic = document.getElementById("PicDescription").value;
-            let picFile = document.getElementById("PicFile").value;
-            console.log("Outer");
-            while (picTit || picDic || picFile) {
-                console.log("Hello");
-                document.getElementsById("createButton").disabled = true;
-            }
-        }
-    </script>
 </div>
 
 
