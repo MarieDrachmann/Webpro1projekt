@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ul>
+
     <li>1. Honning er det eneste fødevareprodukt, der aldrig bliver dårligt. </li>
     <li>2. Hjertet pumper omkring 7.570 liter blod hver dag. </li>
     <li>3. Den højeste temperatur målt på Jorden var 56,7 °C i Death Valley, Californien. </li>
@@ -10,4 +10,3 @@
     <li>11. Jupiter har 79 kendte måner, hvilket er flest i vores solsystem. </li>
     <li>13. En snegle kan sove i op til tre år ad gangen. </li>
     <li>14. Bananer er faktisk bær, mens jordbær ikke er det. </li>
-</ul>

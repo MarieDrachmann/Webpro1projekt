@@ -9,19 +9,21 @@ namespace WebProProjekt.Models
 		[Key]
 		public int Id { get; set; }
 
-		[DisplayName("The heckin' title of yo pic")]
-
-		//[RegularExpression("")]
+		[Required]
+		[DisplayName("The heckin' title of yo pic (May not contain < > . or new line)")]
+		[RegularExpression("([^(<>\n.)])*")]
 		public string? PicTitle { get; set; }
 
-		[DisplayName("Describe your pic !!!")]
-		
+		[Required]
+		[DisplayName("Describe your pic !!!(May not contain < > . or new line)")]
+		[RegularExpression("([^(<>\n.)])*")]
 		public string? PicDescription { get; set; }
 		
 		public string? PicPath { get; set; }
 
 		public required string ProfileId { get; set; }
 
+		[Required]
 		[DisplayName("Pic u have to upload")]
 		[NotMapped]
         public IFormFile PicFile { get; set; }

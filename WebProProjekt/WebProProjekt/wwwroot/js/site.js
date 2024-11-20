@@ -33,5 +33,27 @@ function Fact() {
     forbindelse.send();
 }
 
+function Ajax() {
+    const thing = new XMLHttpRequest();
+    thing.open("GET", "/Home/AjaxCall")
 
+    thing.onload = function () {
+        if (thing.status === 200) {
+            var container = document.getElementById("ajaxText");
+            container.innerHTML = thing.responseText;
+        }
+        else {
+            console.error("Lol didnt work" + thing.status);
+        }
+    }
+    
+    thing.send();
+}
 
+function Validation() {
+    var text = document.forms.value;
+    if (text == "") {
+        alert("This fiels is empty? dont you want to input something?");
+        return false;
+    }
+}

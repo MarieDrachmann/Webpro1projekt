@@ -1,0 +1,74 @@
+
+Når systemet starte, kommer man ind på homepage, herfra skal man først registrere sig som bruger, for derefter at logge ind.
+Herefter kan man se to yderligere knapper i navigationsbaren, Upload pics og show the pics, hvor man henholdsvis kan uploade billeder 
+eller se alle billeder og hvilke brugere der har lagt billeder op med titler og beskrivelser. Man kan også gå til en liste under hvert af
+billederne hvor man kan se alle informationer der er i databasen omkring billederne. 
+Der er en delete knap hvor man kan fjerne billeder fra databasen. 
+
+Views -> Home -> Index   og   
+	Tekst på siden ændre størrelse efter skærmstørrelse
+	Henter gifs fra internettet via img elementer
+	Katte gif'en reagere når musen holdes over, og knappen derpå føre til log ind siden.
+	Når siden er under 500px dukker der en ny gif op
+	Ajax? knappen laver et ajax call gennem controlleren "HomeController" med funktionen AjaxCall()
+	Click for 10 facts knappen printer 14 facts fra en txt fil i js mappen, via et ajax call i site.js med funktionen Ajax()
+	Compliments :) knappen printer 1 af 10 forskellige komplimenter, funktionen er skrevet i site.js med funktionen Compliment()
+
+wwwroot -> css -> site
+	Der er ændret på farven af input felter på logind og registrer siderne
+	Alt udseende der er på Home page er skrevet inde i dette script
+
+wwwroot -> js -> site
+	Funktioner til compliment knap, ajax? knap og facts knap der er på homepage
+	Der bruges en random funktion til at bestemme hvilken kompliment der bliver printet på siden.
+
+	Et forsøg på at lave en validation funktion til input felter på OurPicUploads side, disse er dog lavet til required inde på modellen OurPicUploads
+
+Views -> Home -> Privacy
+	
+
+Views -> OurPicUploads -> ShowOurPicUploads
+	2 foreach loops der går gennem databasen for hver bruger der er oprettet og printer alle denne brugers billeder.
+	Dette gøres ved at bruge en ViewModel kaldet Display i ViewModel mappen, som sammenligner userId med det gemte 
+	profileID, der gemmes i databasen fra hvilken user der oploader et billede. 
+	Der er dertil sat en delete buttion på, som føre til den autogenerede delete page.
+
+Views -> Shared -> _Layout
+Der er lavet en if metode her, hvor man kun kan se upload pics! og Show them pic!lol knapperne hvis man er logget ind. _
+
+ViewModel -> Display
+	En viewmodel der laver en mellem tabel der holder foreign keys til brugertabel og billedtabel i database
+
+Models -> OurPicUploads
+	Model for hvad et objekt skal indholde når et billede oploades.
+	Der er skrevet RegEx ind over hvert felt for at undgå at der kommes bestemte karaktertegn ind i inputfelterne og 
+	videre ind i databasen.
+	Felterne er lavet required fordi de skal udfyldes førend noget kan uploades. 
+	PicFile er ikke mappet, da denne ikke lægges i databasen, men derimod ind i en mappe, Pics i wwwroot folderen.
+
+Controllers -> HomeController
+	Har en funktion til AjaxCall()
+
+Controllers -> OurPicUploadsController
+	funktionen ShowOurPicUploads() opretter Display viewmodel 
+	funktionen Create(OurPicUploads ourPicUpload) som lægger information ind i databasen om hvor billeder kan findes via 
+	url adresse til Pics folder. Den laver navnet om på billederne. Tjekker om billederne har den rigtige filformat.
+	Man kan kun uploade billeder når picupload feltet er udfyldt og at modelstate er valid.
+
+wwwroot -> css -> snake
+
+
+
+wwwroot -> js -> snake
+
+wwwroot -> Pics
+	Indeholder de oploadede billeder
+
+LogIn system
+	Vi har brugt det allerede implementerede logIn system.
+
+Cross-Site-Scripting
+	Bliver implementeret automatisk af MVC template
+
+SQLInjection
+	Bliver implementeret automatisk af MVC template
