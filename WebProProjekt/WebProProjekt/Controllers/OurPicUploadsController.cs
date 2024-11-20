@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -90,7 +92,25 @@ namespace WebProProjekt.Controllers
                 var extension = Path.GetExtension(ourPicUpload.PicFile.FileName);
                 picName = picName + DateTime.Now.ToString("yymmssfff") + extension;
 
-				var uploadPath = Path.Combine(_hostEnvironment.WebRootPath, "Pics");
+                //cross site scripting
+                StringBuilder titleSB = new StringBuilder();
+                titleSB.Append(HttpUtility.HtmlEncode(ourPicUpload.PicTitle));
+                StringBuilder desSB = new StringBuilder();
+                desSB.Append(HttpUtility.HtmlEncode(ourPicUpload.PicDescription));
+
+                titleSB.Replace("&#230;", "æ");
+                titleSB.Replace("&#248;", "ø");
+                titleSB.Replace("&#229;", "å");
+
+                desSB.Replace("&#230;", "æ");
+                desSB.Replace("&#248;", "ø"); //Den burde vise ø men det gør den ikke?
+                desSB.Replace("&#229;", "å");
+
+                ourPicUpload.PicTitle = titleSB.ToString();
+                ourPicUpload.PicDescription = desSB.ToString();
+
+
+                var uploadPath = Path.Combine(_hostEnvironment.WebRootPath, "Pics");
 				if (!Directory.Exists(uploadPath))
 				{
 					Directory.CreateDirectory(uploadPath);
@@ -147,13 +167,30 @@ namespace WebProProjekt.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,PicTitle,PicDescription,PicPath,ProfileId")] OurPicUploads ourPicUpload)
+        public async Task<IActionResult> Edit(int id,OurPicUploads ourPicUpload)
         {
+            //cross site scripting
+            StringBuilder titleSB = new StringBuilder();
+            titleSB.Append(HttpUtility.HtmlEncode(ourPicUpload.PicTitle));
+            StringBuilder desSB = new StringBuilder();
+            desSB.Append(HttpUtility.HtmlEncode(ourPicUpload.PicDescription));
+
+            titleSB.Replace("&#230;", "æ");
+            titleSB.Replace("&#248;", "ø");
+            titleSB.Replace("&#229;", "å");
+
+            desSB.Replace("&#230;", "æ");
+            desSB.Replace("&#248;", "ø"); //Den burde vise ø men det gør den ikke?
+            desSB.Replace("&#229;", "å");
+
+            ourPicUpload.PicTitle = titleSB.ToString();
+            ourPicUpload.PicDescription = desSB.ToString();
             if (id != ourPicUpload.Id)
             {
                 return NotFound();
             }
 
+            ModelState.Remove("ProfileId");
             if (ModelState.IsValid)
             {
                 try

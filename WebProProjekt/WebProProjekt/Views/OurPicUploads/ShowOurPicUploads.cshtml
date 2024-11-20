@@ -2,6 +2,14 @@
 @model Display
 
 
+<h1>users in database!</h1>
+@foreach (var user in Model.IUser) //All users in database
+{
+	
+	<div>
+		this is a user: @user.UserName
+	</div>
+}
 @foreach (var user in Model.IUser) //All users in database
 {
 	@foreach (var post in Model.pics) //all the pictures in the database

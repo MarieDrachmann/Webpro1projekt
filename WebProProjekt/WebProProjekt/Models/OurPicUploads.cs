@@ -11,7 +11,7 @@ namespace WebProProjekt.Models
 
 		[Required]
 		[DisplayName("The heckin' title of yo pic (May not contain < > . or new line)")]
-		[RegularExpression("([^(<>\n.)])*")]
+		//[RegularExpression("([^(<>\n.)])*")]
 		public string? PicTitle { get; set; }
 
 		[Required]

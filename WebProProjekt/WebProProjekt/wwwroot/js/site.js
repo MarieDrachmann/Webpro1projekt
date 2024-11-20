@@ -53,7 +53,7 @@ function Ajax() {
 function Validation() {
     var text = document.forms.value;
     if (text == "") {
-        alert("This fiels is empty? dont you want to input something?");
+        alert("This field is empty? dont you want to input something?");
         return false;
     }
 }
